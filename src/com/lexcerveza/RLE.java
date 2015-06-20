@@ -35,7 +35,6 @@ public class RLE {
      * @param encodedMessage - encoded array of integers
      * @return source array of integers
      */
-    // TODO : still a lil' buggy
     public static int[] decode(String encodedMessage){
         int decodedMessageLength = 0;
         for (int i = 0; i < encodedMessage.length(); i += 2){
@@ -43,9 +42,10 @@ public class RLE {
         }
 
         int[] decodedMessage = new int[decodedMessageLength];
-        int count = Integer.parseInt(String.valueOf(encodedMessage.charAt(0)));
         int pointer = 0;
+
         for (int i = 0; i < encodedMessage.length(); i += 2){
+            int count = Integer.parseInt(String.valueOf(encodedMessage.charAt(i)));
             int value = Integer.parseInt(String.valueOf(encodedMessage.charAt(i + 1)));
             for (int j = 0; j < count; j++){
                 decodedMessage[pointer] = value;
