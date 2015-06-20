@@ -1,8 +1,5 @@
 package com.lexcerveza;
 
-/**
- * Created by Alex on 20.06.2015.
- */
 public class RLE {
 
     /**
